@@ -1,4 +1,13 @@
-arr=eval(input("enter values:"))
-d=3
-ans=rotate_array(arr,d)
-print(ans)
+def rotate_array(arr, d):
+ n = len(arr)
+ if d < 0 or d >= n:
+   return "Invalid rotation value"
+ rotated_arr=[0]*n
+ for i in range(n):
+     rotated_arr[i] = arr[(i + d) % n]
+ return rotated_arr
+arr = [10,20,30,40,50,60]
+d = 2
+result = rotate_array(arr, d)
+print("Original Array:", arr)
+print("Rotated Array:", result)
