@@ -1,0 +1,14 @@
+def is_happy_number(num):
+    a=set()
+    while num!=1 and num not in a:
+        a.add(num)
+        num = sum(int(i) ** 2 for i in str(num))
+    return num==1
+
+happy_number = []
+for num in range(1, 101):
+
+ if is_happy_number(num):
+    happy_number.append(num)
+print("Happy Numbers between 1 and 100:")
+print(happy_number)
